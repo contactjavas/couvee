@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 // Couvee packages.
@@ -73,7 +74,17 @@ class AccountPreviewBlock extends StatelessWidget {
                   height: 35.0,
                   child: FlatButton(
                     color: CompanyColors.brown,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SettingsWrapperScreen(
+                            title: 'Edit Account',
+                            child: EditAccountScreen(),
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Edit",
                       style: TextStyle(

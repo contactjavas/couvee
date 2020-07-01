@@ -1,6 +1,7 @@
 // Core packages.
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/elements/textured_wall.dart';
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -9,9 +10,6 @@ import 'package:flutter/rendering.dart';
 // Couvee packages.
 import 'package:couvee/components/qr_code_scan/qr_code_scan.dart';
 import 'package:couvee/components/qr_code_scan/qr_scanner_overlay_shape.dart';
-
-// Couvee screens.
-import 'package:couvee/screens/points-earning/earning_steps.dart';
 
 class ScanQrcode extends StatefulWidget {
   const ScanQrcode({

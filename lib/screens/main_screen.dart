@@ -27,10 +27,10 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   final _tabPages = <Widget>[
-    MenuScreen(),
-    Text('Voucher'),
-    Text('Merchandise'),
     HomeScreen(),
+    Text('Merchandise'),
+    Text('Voucher'),
+    MenuScreen(),
   ];
 
   final _navbarItems = <BottomNavigationBarItem>[

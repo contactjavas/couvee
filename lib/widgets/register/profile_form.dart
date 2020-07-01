@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/widgets/register/confirm_otp.dart';
 import 'package:flutter/material.dart';
 
 // Extension packages.
@@ -13,7 +14,6 @@ import 'package:couvee/interfaces/register/account_data_interface.dart';
 import 'package:couvee/interfaces/register/profile_data_interface.dart';
 import 'package:couvee/services/auth_service.dart';
 import 'package:couvee/responses/basic_response.dart';
-import 'package:couvee/screens/register/confirm_otp.dart';
 
 class ProfileForm extends StatefulWidget {
   final AccountDataInterface accountData;

@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/widgets/login/confirm_otp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,9 +21,6 @@ import 'package:couvee/services/auth_service.dart';
 
 // Couvee responses.
 import 'package:couvee/responses/basic_response.dart';
-
-// Couvee screens.
-import 'package:couvee/screens/login/confirm_otp.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);

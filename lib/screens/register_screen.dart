@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,7 +17,6 @@ import 'package:couvee/dialogs/error_dialog.dart';
 import 'package:couvee/interfaces/register/account_data_interface.dart';
 
 // Couvee screens.
-import 'package:couvee/screens/register/profile_form.dart';
 
 // Couvee services.
 import 'package:couvee/services/auth_service.dart';

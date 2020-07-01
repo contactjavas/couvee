@@ -1,5 +1,6 @@
 // Core packages.
 import 'dart:ui';
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,10 +15,6 @@ import 'package:couvee/company_colors.dart';
 
 // Couvee responses.
 import 'package:couvee/responses/auth_response.dart';
-
-// Couvee screens.
-import 'package:couvee/screens/home/empty_history.dart';
-import 'package:couvee/screens/points-earning/scan_qrcode.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

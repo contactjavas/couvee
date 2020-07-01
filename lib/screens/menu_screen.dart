@@ -1,5 +1,7 @@
 // Core packages.
 import 'dart:ui';
+import 'package:couvee/elements/title_section.dart';
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -12,9 +14,6 @@ import 'package:couvee/company_colors.dart';
 
 // Couvee responses.
 import 'package:couvee/responses/auth_response.dart';
-
-// Couvee screens.
-import 'package:couvee/screens/menu/menu_sheet.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -55,38 +54,41 @@ class _MenuScreenState extends State<MenuScreen> {
     body1FontSize = Theme.of(context).textTheme.bodyText2.fontSize;
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
-    return Container(
-      constraints: BoxConstraints.expand(),
-      child: Stack(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: screenHeight / 13, bottom: 30.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Menu',
-                    style: GoogleFonts.kanit(
-                      fontSize: Theme.of(context).textTheme.headline5.fontSize,
-                      fontWeight: FontWeight.w500,
-                      textStyle: TextStyle(
-                        color: CompanyColors.black,
+    return SafeArea(
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        child: Stack(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Menu',
+                      style: GoogleFonts.kanit(
+                        fontSize:
+                            Theme.of(context).textTheme.headline5.fontSize,
+                        fontWeight: FontWeight.w500,
+                        textStyle: TextStyle(
+                          color: CompanyColors.black,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox.expand(
-            child: MenuSheet(
-              user: this.user,
+            SizedBox.expand(
+              child: MenuSheet(
+                user: this.user,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

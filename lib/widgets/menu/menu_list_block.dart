@@ -1,10 +1,7 @@
 // Core packages.
 import 'package:couvee/company_colors.dart';
+import 'package:couvee/screens/screens.dart';
 import 'package:flutter/material.dart';
-
-// Couvee packages.
-
-// Couvee responses.
 
 class MenuListBlock extends StatelessWidget {
   final ScrollController scrollController;
@@ -28,6 +25,17 @@ class MenuListBlock extends StatelessWidget {
           thickness: 1.0,
         ),
         ListTile(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SettingsWrapperScreen(
+                  title: 'Referral Code',
+                  child: ReferralScreen(),
+                ),
+              ),
+            );
+          },
           dense: false,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 0.0,
@@ -57,6 +65,17 @@ class MenuListBlock extends StatelessWidget {
           thickness: 1.0,
         ),
         ListTile(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SettingsWrapperScreen(
+                  title: 'Help',
+                  child: HelpScreen(),
+                ),
+              ),
+            );
+          },
           dense: false,
           contentPadding: EdgeInsets.symmetric(
             horizontal: 0.0,

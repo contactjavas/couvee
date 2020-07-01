@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 // Couvee packages.
 import 'package:couvee/company_colors.dart';
 
+import '../../company_colors.dart';
+import '../../company_colors.dart';
+import '../points-earning/scan_qrcode.dart';
+
 class EmptyHistory extends StatefulWidget {
   @override
   _EmptyHistoryState createState() => _EmptyHistoryState();
@@ -25,7 +29,8 @@ class _EmptyHistoryState extends State<EmptyHistory> {
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.3,
+      initialChildSize: 0.45,
+      minChildSize: 0.45,
       maxChildSize: 0.95,
       builder: (
         BuildContext context,
@@ -102,15 +107,22 @@ class _EmptyHistoryState extends State<EmptyHistory> {
                   icon: ImageIcon(
                     AssetImage("assets/images/qrcode-light.png"),
                     size: 20,
-                    color: Colors.white,
+                    color: CompanyColors.brown,
                   ),
                   label: Text(
                     "Tambah Point",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: CompanyColors.brown,
                     ),
                   ),
-                  onPressed: () => VoidCallback,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScanQrcode(),
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

@@ -1,6 +1,5 @@
 // Core packages.
-import 'package:couvee/screens/menu/account_preview_block.dart';
-import 'package:couvee/screens/menu/menu_list_block.dart';
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 // Couvee packages.
@@ -10,7 +9,7 @@ import 'package:couvee/responses/auth_response.dart';
 
 class MenuSheet extends StatefulWidget {
   final UserData user;
-  
+
   MenuSheet({Key key, @required this.user}) : super(key: key);
 
   _MenuSheetState createState() => _MenuSheetState();
@@ -32,8 +31,8 @@ class _MenuSheetState extends State<MenuSheet> {
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.8,
-      minChildSize: 0.8,
+      initialChildSize: 0.85,
+      minChildSize: 0.85,
       maxChildSize: 0.95,
       builder: (
         BuildContext context,
