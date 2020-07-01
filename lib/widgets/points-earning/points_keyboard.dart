@@ -3,13 +3,43 @@ import 'package:couvee/widgets/widgets.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
-class PointsKeyboard extends StatelessWidget {
-  Widget keyboardButtonWrapper(child) {
+class PointsKeyboard extends StatefulWidget {
+  @override
+  _PointsKeyboardState createState() => _PointsKeyboardState();
+}
+
+class _PointsKeyboardState extends State<PointsKeyboard> {
+  final _rpController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void handleChange(String text) {
+    setState(() {
+      _rpController.text = _rpController.text + text;
+    });
+  }
+
+  void handleDelete() {
+    if (_rpController.text.length != null && _rpController.text.length > 0)
+      setState(() {
+        _rpController.text =
+            _rpController.text.substring(0, _rpController.text.length - 1);
+      });
+  }
+
+  Widget keyboardButtonWrapper(child, value) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          print("hey");
+          if (value == 'backspace') {
+            handleDelete();
+          } else {
+            handleChange(value.toString());
+          }
         },
         child: child,
       ),
@@ -33,7 +63,7 @@ class PointsKeyboard extends StatelessWidget {
           children: <Widget>[
             Flexible(
               flex: 3,
-              child: PointsKeyboardHeader(),
+              child: PointsKeyboardHeader(controller: _rpController),
             ),
             Flexible(
               flex: 7,
@@ -72,30 +102,31 @@ class PointsKeyboard extends StatelessWidget {
                                     style: TextStyle(fontSize: 36.0),
                                   ),
                                 ),
+                                "0",
                               );
                             }
                             if (index == 11) {
                               return keyboardButtonWrapper(
-                                Container(
-                                  alignment: Alignment.center,
-                                  child: Center(
-                                    child: Icon(
-                                      EvaIcons.backspace,
+                                  Container(
+                                    alignment: Alignment.center,
+                                    child: Center(
+                                      child: Icon(
+                                        EvaIcons.backspace,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              );
+                                  "backspace");
                             }
                             if (index == 10) {
                               return keyboardButtonWrapper(
-                                Container(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "000",
-                                    style: TextStyle(fontSize: 36.0),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "000",
+                                      style: TextStyle(fontSize: 36.0),
+                                    ),
                                   ),
-                                ),
-                              );
+                                  '000');
                             }
                             return keyboardButtonWrapper(
                               Container(
@@ -105,6 +136,7 @@ class PointsKeyboard extends StatelessWidget {
                                   style: TextStyle(fontSize: 36.0),
                                 ),
                               ),
+                              index + 1,
                             );
                           },
                         ),

@@ -10,3 +10,5 @@ export './points-earning/points_keyboard.dart';
 export './points-earning/scan_qrcode.dart';
 export './register/profile_form.dart';
 export './points-earning/points_keyboard_header.dart';
+export './points-earning/waiting_transfer.dart';
+export './points-earning/confirm_transfer.dart';

@@ -3,7 +3,8 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 class PointsKeyboardHeader extends StatelessWidget {
-  const PointsKeyboardHeader({Key key}) : super(key: key);
+  final TextEditingController controller;
+  const PointsKeyboardHeader({Key key, this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,14 +63,20 @@ class PointsKeyboardHeader extends StatelessWidget {
             Flexible(
               flex: 1,
               child: TextFormField(
-                initialValue: '0',
+                controller: controller,
                 showCursor: true,
                 readOnly: true,
                 cursorColor: CompanyColors.lightGrey,
                 decoration: InputDecoration(
-                  suffixIcon: Icon(
-                    EvaIcons.closeCircle,
-                    color: CompanyColors.lightGrey,
+                  hintText: "0",
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      controller.text = '';
+                    },
+                    icon: Icon(
+                      EvaIcons.closeCircle,
+                      color: CompanyColors.lightGrey,
+                    ),
                   ),
                   fillColor: Colors.transparent,
                 ),

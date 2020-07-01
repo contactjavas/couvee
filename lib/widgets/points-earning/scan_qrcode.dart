@@ -112,10 +112,15 @@ class _ScanQrcode extends State<ScanQrcode> {
                       ),
                       InkWell(
                         onTap: () {
+                          // _scaffoldKey.currentState.showBottomSheet<void>(
+                          //   (BuildContext context) {
+                          //     return PointsKeyboard();
+                          //   },
+                          // );
+                          // _scaffoldKey.currentState.showBottomSheet<void>(
+                          //     (context) => WaitingTransfer());
                           _scaffoldKey.currentState.showBottomSheet<void>(
-                            (BuildContext context) {
-                              return PointsKeyboard();
-                            },
+                            (context) => ConfirmTransfer(),
                           );
                         },
                         child: EarningSteps(),
