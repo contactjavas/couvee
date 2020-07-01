@@ -72,6 +72,7 @@ class StepItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             number.toString(),
@@ -83,14 +84,16 @@ class StepItem extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(
-              top: stepItemSize / 18,
-              bottom: stepItemSize / 15,
-            ),
-            child: Image.asset(
-              imageUrl,
-              height: 20.5,
+          AspectRatio(
+            aspectRatio: 100 / 50,
+            child: Container(
+              margin: EdgeInsets.only(
+                top: stepItemSize / 18,
+                bottom: stepItemSize / 15,
+              ),
+              child: Image.asset(
+                imageUrl,
+              ),
             ),
           ),
           Text(

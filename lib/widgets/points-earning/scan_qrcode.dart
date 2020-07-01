@@ -23,7 +23,7 @@ class _ScanQrcode extends State<ScanQrcode> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   var qrText = "";
   QRViewController controller;
-
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   double screenWidth;
   double screenHeight;
   double stepItemSize;
@@ -64,6 +64,7 @@ class _ScanQrcode extends State<ScanQrcode> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: appBar,
+          key: _scaffoldKey,
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -71,19 +72,20 @@ class _ScanQrcode extends State<ScanQrcode> {
                 flex: 7,
                 child: Container(
                   alignment: Alignment.center,
-                  child: QRView(
-                    key: qrKey,
-                    overlay: QrScannerOverlayShape(
-                      borderColor: CompanyColors.brown,
-                      borderRadius: 10,
-                      borderLength: 20,
-                      borderWidth: 10,
-                      cutOutSize: 280.0,
-                      cutOutTop: appBar.preferredSize.height +
-                          MediaQuery.of(context).padding.top,
-                    ),
-                    onQRViewCreated: _onQRViewCreated,
-                  ),
+                  child: Text("Hi"),
+                  // QRView(
+                  //   key: qrKey,
+                  //   overlay: QrScannerOverlayShape(
+                  //     borderColor: CompanyColors.brown,
+                  //     borderRadius: 10,
+                  //     borderLength: 20,
+                  //     borderWidth: 10,
+                  //     cutOutSize: 280.0,
+                  //     cutOutTop: appBar.preferredSize.height +
+                  //         MediaQuery.of(context).padding.top,
+                  //   ),
+                  //   onQRViewCreated: _onQRViewCreated,
+                  // ),
                 ),
               ),
               Expanded(
@@ -108,7 +110,16 @@ class _ScanQrcode extends State<ScanQrcode> {
                           ),
                         ),
                       ),
-                      EarningSteps(),
+                      InkWell(
+                        onTap: () {
+                          _scaffoldKey.currentState.showBottomSheet<void>(
+                            (BuildContext context) {
+                              return PointsKeyboard();
+                            },
+                          );
+                        },
+                        child: EarningSteps(),
+                      ),
                     ],
                   ),
                 ),

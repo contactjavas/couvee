@@ -6,5 +6,7 @@ export './menu/account_preview_block.dart';
 export './menu/menu_list_block.dart';
 export './menu/menu_sheet.dart';
 export './points-earning/earning_steps.dart';
+export './points-earning/points_keyboard.dart';
 export './points-earning/scan_qrcode.dart';
 export './register/profile_form.dart';
+export './points-earning/points_keyboard_header.dart';
