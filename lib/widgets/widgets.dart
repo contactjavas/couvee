@@ -1,8 +1,7 @@
 export './home/empty_history.dart';
 export './home/history.dart';
-
+export './home/history_item.dart';
 export './login/confirm_otp.dart';
-
 export './menu/account_preview_block.dart';
 export './menu/menu_list_block.dart';
 export './menu/menu_sheet.dart';
