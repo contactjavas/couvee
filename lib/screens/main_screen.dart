@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/screens/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -7,10 +8,6 @@ import 'package:couvee/company_colors.dart';
 
 // Couvee elements.
 import 'package:couvee/elements/textured_wall.dart';
-
-// Couvee screens.
-import 'package:couvee/screens/home_screen.dart';
-import 'package:couvee/screens/menu_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -29,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   final _tabPages = <Widget>[
     HomeScreen(),
     Text('Merchandise'),
-    Text('Voucher'),
+    VouchersScreen(),
     MenuScreen(),
   ];
 

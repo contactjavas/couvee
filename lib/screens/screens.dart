@@ -11,3 +11,5 @@ export 'settings_wrapper_screen.dart';
 export 'edit_account_screen.dart';
 export 'referral_screen.dart';
 export 'help_screen.dart';
+export 'vouchers/vouchers_screen.dart';
+export 'vouchers/voucher_details_screen.dart';
