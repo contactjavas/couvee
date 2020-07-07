@@ -72,20 +72,20 @@ class _ScanQrcode extends State<ScanQrcode> {
                 flex: 7,
                 child: Container(
                   alignment: Alignment.center,
-                  child: Text("Hi"),
-                  // QRView(
-                  //   key: qrKey,
-                  //   overlay: QrScannerOverlayShape(
-                  //     borderColor: CompanyColors.brown,
-                  //     borderRadius: 10,
-                  //     borderLength: 20,
-                  //     borderWidth: 10,
-                  //     cutOutSize: 280.0,
-                  //     cutOutTop: appBar.preferredSize.height +
-                  //         MediaQuery.of(context).padding.top,
-                  //   ),
-                  //   onQRViewCreated: _onQRViewCreated,
-                  // ),
+                  // child: Text("Hi"),
+                  child: QRView(
+                    key: qrKey,
+                    overlay: QrScannerOverlayShape(
+                      borderColor: CompanyColors.brown,
+                      borderRadius: 10,
+                      borderLength: 20,
+                      borderWidth: 10,
+                      cutOutSize: 280.0,
+                      cutOutTop: appBar.preferredSize.height +
+                          MediaQuery.of(context).padding.top,
+                    ),
+                    onQRViewCreated: _onQRViewCreated,
+                  ),
                 ),
               ),
               Expanded(

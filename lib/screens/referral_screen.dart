@@ -103,7 +103,12 @@ class _ReferralScreenState extends State<ReferralScreen> {
             ],
           ),
           Container(
-            padding: EdgeInsets.only(left: 30, right: 30, top: 16, bottom: 16),
+            padding: EdgeInsets.only(
+              left: 30,
+              right: 30,
+              top: 16,
+              bottom: 16,
+            ),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.14,
             decoration: BoxDecoration(

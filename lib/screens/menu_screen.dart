@@ -1,6 +1,5 @@
 // Core packages.
 import 'dart:ui';
-import 'package:couvee/elements/title_section.dart';
 import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

@@ -117,8 +117,8 @@ class _VouchersListState extends State<VouchersList> {
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.7,
-      minChildSize: 0.7,
+      initialChildSize: 0.65,
+      minChildSize: 0.65,
       maxChildSize: 0.95,
       builder: (
         BuildContext context,

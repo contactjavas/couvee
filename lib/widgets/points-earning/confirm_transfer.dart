@@ -10,7 +10,10 @@ class ConfirmTransfer extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.5,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(35.0),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(35.0),
+          topRight: Radius.circular(35.0),
+        ),
       ),
       padding: EdgeInsets.only(
         top: 16.0,

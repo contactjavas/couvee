@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:couvee/company_colors.dart';
 
 import '../../company_colors.dart';
-import '../../company_colors.dart';
 import '../points-earning/scan_qrcode.dart';
 
 class EmptyHistory extends StatefulWidget {
@@ -29,8 +28,8 @@ class _EmptyHistoryState extends State<EmptyHistory> {
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.45,
-      minChildSize: 0.45,
+      initialChildSize: 0.42,
+      minChildSize: 0.42,
       maxChildSize: 0.95,
       builder: (
         BuildContext context,
