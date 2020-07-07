@@ -3,6 +3,12 @@ import 'package:couvee/company_colors.dart';
 import 'package:couvee/screens/screens.dart';
 import 'package:flutter/material.dart';
 
+// Extension packages.
+import 'package:hive/hive.dart';
+
+// Couvee screens.
+import 'package:couvee/screens/pre_login_screen.dart';
+
 class MenuListBlock extends StatelessWidget {
   final ScrollController scrollController;
   final double horizontalPadding = 25.0;
@@ -154,6 +160,17 @@ class MenuListBlock extends StatelessWidget {
               fontSize: Theme.of(context).textTheme.subtitle1.fontSize,
             ),
           ),
+          onTap: () {
+            final userBox = Hive.box('user');
+            userBox.put('id', null);
+
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PreLoginScreen(),
+              ),
+            );
+          },
         ),
       ],
     );
