@@ -17,6 +17,8 @@ import 'package:couvee/company_colors.dart';
 import 'package:couvee/responses/auth_response.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key key}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }

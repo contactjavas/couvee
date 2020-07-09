@@ -16,6 +16,7 @@ import 'package:couvee/company_colors.dart';
 import 'package:couvee/responses/auth_response.dart';
 
 class MenuScreen extends StatefulWidget {
+  const MenuScreen({Key key}) : super(key: key);
   @override
   _MenuScreenState createState() => _MenuScreenState();
 }

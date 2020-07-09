@@ -20,3 +20,8 @@ export './vouchers/confirm_modal.dart';
 export './vouchers/tabs.dart';
 export './vouchers/voucher_buy_details.dart';
 export './vouchers/confirm_buy_modal.dart';
+export 'merchandise/header.dart';
+export 'merchandise/merchandise_list.dart';
+export 'merchandise/merchandise_item.dart';
+export 'merchandise/merchandise_details_header.dart';
+export 'merchandise/merchandise_details_item.dart';

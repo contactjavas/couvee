@@ -1,4 +1,5 @@
 // Core packages.
+import 'package:couvee/screens/screens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -72,6 +73,11 @@ class CouveeApp extends StatelessWidget {
           ),
         ),
       ),
+      routes: {
+        "/merchandiseDetails": (context) {
+          return MerchandiseDetails();
+        }
+      },
       home: ScreenSelector(),
     );
   }

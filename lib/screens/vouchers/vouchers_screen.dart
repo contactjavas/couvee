@@ -11,6 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:couvee/company_colors.dart';
 
 class VouchersScreen extends StatefulWidget {
+  const VouchersScreen({Key key}) : super(key: key);
+
   @override
   _VouchersScreenState createState() => _VouchersScreenState();
 }

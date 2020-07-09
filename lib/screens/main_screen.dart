@@ -23,9 +23,9 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-  final _tabPages = <Widget>[
+  final List<Widget> _tabPages = [
     HomeScreen(),
-    Text('Merchandise'),
+    Merchandise(),
     VouchersScreen(),
     MenuScreen(),
   ];

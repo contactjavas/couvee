@@ -13,3 +13,5 @@ export 'referral_screen.dart';
 export 'help_screen.dart';
 export 'vouchers/vouchers_screen.dart';
 export 'vouchers/voucher_details_screen.dart';
+export 'merchandise/mechandise.dart';
+export 'merchandise/merchandise_details.dart';
