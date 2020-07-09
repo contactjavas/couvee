@@ -33,7 +33,10 @@ class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.0,
+        vertical: 38.0,
+      ),
       child: ListView(
         children: <Widget>[
           ExpansionPanelList(

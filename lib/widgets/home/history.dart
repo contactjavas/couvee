@@ -28,8 +28,8 @@ class _HistoryState extends State<History> {
     subheadFontSize = Theme.of(context).textTheme.subtitle1.fontSize;
 
     return DraggableScrollableSheet(
-      initialChildSize: 0.45,
-      minChildSize: 0.45,
+      initialChildSize: 0.42,
+      minChildSize: 0.42,
       maxChildSize: 0.95,
       builder: (
         BuildContext context,
