@@ -1,7 +1,21 @@
-import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:couvee/company_colors.dart';
+import 'package:couvee/widgets/widgets.dart';
+
+class Product {
+  final String title;
+  final int pts;
+  final int inStock;
+  final String image;
+
+  Product({
+    this.title,
+    this.pts,
+    this.inStock,
+    this.image,
+  });
+}
 
 class MerchandiseDetailsHeader extends StatefulWidget {
   const MerchandiseDetailsHeader({Key key}) : super(key: key);
@@ -12,6 +26,8 @@ class MerchandiseDetailsHeader extends StatefulWidget {
 }
 
 class _MerchandiseDetailsHeaderState extends State<MerchandiseDetailsHeader> {
+  int ptsSum = 0;
+
   double screenWidth;
 
   double screenHeight;
@@ -19,6 +35,30 @@ class _MerchandiseDetailsHeaderState extends State<MerchandiseDetailsHeader> {
   double body1FontSize;
 
   double subheadFontSize;
+
+  List<Product> products = [
+    Product(
+        title: "T-Shirt",
+        inStock: 4,
+        pts: 200,
+        image: "assets/images/merchandise-details-item1.png"),
+    Product(
+        title: "Mug",
+        inStock: 8,
+        pts: 200,
+        image: "assets/images/merchandise-details-item2.png"),
+    Product(
+        title: "Totebag",
+        inStock: 4,
+        pts: 200,
+        image: "assets/images/merchandise-details-item3.png"),
+  ];
+
+  void handlePts(int pts) {
+    setState(() {
+      ptsSum = pts;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,28 +160,24 @@ class _MerchandiseDetailsHeaderState extends State<MerchandiseDetailsHeader> {
                   Expanded(
                     child: ListView(
                       padding: EdgeInsets.zero,
-                      children: <Widget>[
-                        MerchandiseDetailsItem(
-                          title: "T-shirt",
-                          pts: 200,
-                          inStock: 4,
-                          image: "assets/images/merchandise-details-item1.png",
-                        ),
-                        MerchandiseDetailsItem(
-                          title: "Mug",
-                          pts: 200,
-                          inStock: 8,
-                          image: "assets/images/merchandise-details-item2.png",
-                        ),
-                        MerchandiseDetailsItem(
-                          title: "Totebag",
-                          pts: 200,
-                          inStock: 4,
-                          image: "assets/images/merchandise-details-item3.png",
-                        ),
-                      ],
+                      children: products
+                          .map(
+                            (e) => MerchandiseDetailsItem(
+                              title: e.title,
+                              pts: e.pts,
+                              inStock: e.inStock,
+                              image: e.image,
+                              handlePts: handlePts,
+                            ),
+                          )
+                          .toList(),
                     ),
                   ),
+                  ptsSum > 0
+                      ? MerchandiseBottom(
+                          ptsSum: ptsSum,
+                        )
+                      : SizedBox(),
                 ],
               ),
             ),

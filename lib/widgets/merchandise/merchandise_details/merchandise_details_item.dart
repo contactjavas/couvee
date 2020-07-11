@@ -1,14 +1,31 @@
 import 'package:couvee/company_colors.dart';
+import 'package:couvee/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class MerchandiseDetailsItem extends StatelessWidget {
+typedef void HandlePts(int pts);
+
+class MerchandiseDetailsItem extends StatefulWidget {
   final String title;
   final String image;
   final int inStock;
   final int pts;
+  final HandlePts handlePts;
   const MerchandiseDetailsItem(
-      {Key key, this.title, this.image, this.inStock, this.pts})
+      {Key key, this.title, this.image, this.inStock, this.pts, this.handlePts})
       : super(key: key);
+
+  @override
+  _MerchandiseDetailsItemState createState() => _MerchandiseDetailsItemState();
+}
+
+class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
+  bool selected = false;
+
+  void handleSelect() {
+    setState(() {
+      selected = !selected;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +45,8 @@ class MerchandiseDetailsItem extends StatelessWidget {
                     ),
                   ),
                   builder: (BuildContext context) {
-                    return Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(5.0),
-                            child: Image.asset(image),
-                          ),
-                          FlatButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text(
-                              "Kembali",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: CompanyColors.brown,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                    return MerchandiseViewProductModal(
+                      image: widget.image,
                     );
                   });
             },
@@ -57,9 +54,10 @@ class MerchandiseDetailsItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(14.0),
               child: Container(
                 color: Color.fromRGBO(207, 209, 213, 1),
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: 100,
+                height: 100,
                 child: Image.asset(
-                  image,
+                  widget.image,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -72,13 +70,13 @@ class MerchandiseDetailsItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                title,
+                widget.title,
                 style: TextStyle(
                   fontSize: 18.0,
                 ),
               ),
               Text(
-                "$inStock availbe",
+                "${widget.inStock} availbe",
                 style: TextStyle(
                   fontSize: 12.0,
                   color: CompanyColors.lightGrey,
@@ -89,7 +87,7 @@ class MerchandiseDetailsItem extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                    text: pts.toString(),
+                    text: widget.pts.toString(),
                     style: TextStyle(
                       fontSize: 18,
                       color: CompanyColors.brown,
@@ -98,7 +96,9 @@ class MerchandiseDetailsItem extends StatelessWidget {
                       TextSpan(
                         text: " pts",
                         style: TextStyle(
-                            fontSize: 14.0, color: CompanyColors.brown),
+                          fontSize: 14.0,
+                          color: CompanyColors.brown,
+                        ),
                       ),
                     ]),
               )
@@ -107,31 +107,38 @@ class MerchandiseDetailsItem extends StatelessWidget {
           Spacer(
             flex: 3,
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.3,
-            child: FlatButton(
-              color: CompanyColors.brown,
-              onPressed: () {
-                print("presseed");
-              },
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  SizedBox(
-                    height: 14.0,
-                    child: Image.asset("assets/images/coin-solid.png"),
-                  ),
-                  Text(
-                    "Redeem",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.white,
+          selected
+              ? MerchandiseCounter(
+                  pts: widget.pts,
+                  inStock: widget.inStock,
+                  callback: widget.handlePts,
+                )
+              : SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  child: FlatButton(
+                    color: CompanyColors.brown,
+                    onPressed: () {
+                      handleSelect();
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SizedBox(
+                          height: 14.0,
+                          child: Image.asset("assets/images/coin-solid.png"),
+                        ),
+                        SizedBox(width: 3),
+                        Text(
+                          "Redeem",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ),
-          ),
+                  ),
+                ),
         ],
       ),
     );

@@ -14,6 +14,8 @@ import 'package:couvee/screens/lock_screen.dart';
 import 'package:couvee/screens/onboarding_screen.dart';
 import 'package:couvee/screens/pre_login_screen.dart';
 
+import 'screens/screens.dart';
+
 class ScreenSelector extends StatelessWidget {
   const ScreenSelector({Key key}) : super(key: key);
 
@@ -42,8 +44,8 @@ class ScreenSelector extends StatelessWidget {
         final settingBox = Hive.box('setting');
 
         if (userBox.get('id') != null) {
-          return LockScreen();
-          // return MainScreen();
+          // return LockScreen();
+          return MainScreen();
         }
 
         return settingBox.get('hideOnboarding') != null
