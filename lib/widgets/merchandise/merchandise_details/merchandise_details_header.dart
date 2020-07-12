@@ -120,7 +120,7 @@ class _MerchandiseDetailsHeaderState extends State<MerchandiseDetailsHeader> {
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.25,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         margin: EdgeInsets.only(
                           top: 5,
                           bottom: 22,
