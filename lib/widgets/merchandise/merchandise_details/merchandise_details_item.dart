@@ -115,30 +115,28 @@ class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
                 )
               : SizedBox(
                   width: MediaQuery.of(context).size.width * 0.3,
-                  child: SizedBox(
-                    height: 42.0,
-                    child: FlatButton(
-                      color: CompanyColors.brown,
-                      onPressed: () {
-                        handleSelect();
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          SizedBox(
-                            height: 14.0,
-                            child: Image.asset("assets/images/coin-solid.png"),
+                  height: 42.0,
+                  child: FlatButton(
+                    color: CompanyColors.brown,
+                    onPressed: () {
+                      handleSelect();
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SizedBox(
+                          height: 14.0,
+                          child: Image.asset("assets/images/coin-solid.png"),
+                        ),
+                        SizedBox(width: 3),
+                        Text(
+                          "Redeem",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.white,
                           ),
-                          SizedBox(width: 3),
-                          Text(
-                            "Redeem",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                   ),
                 ),
