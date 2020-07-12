@@ -20,7 +20,7 @@ class MerchandiseCounter extends StatefulWidget {
 }
 
 class _MerchandiseCounterState extends State<MerchandiseCounter> {
-  int counter = 0;
+  int counter = 1;
 
   void handleCounter(Actions actions) {
     if (actions == Actions.add) {

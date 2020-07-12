@@ -76,7 +76,7 @@ class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
                 ),
               ),
               Text(
-                "${widget.inStock} availbe",
+                "${widget.inStock} available",
                 style: TextStyle(
                   fontSize: 12.0,
                   color: CompanyColors.lightGrey,
