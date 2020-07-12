@@ -34,7 +34,7 @@ class MerchandiseHeader extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.6,
+                width: MediaQuery.of(context).size.width * 0.7,
                 child: Text(
                   "Tukar pointmu dengan merchandise original dari Couvee",
                   textAlign: TextAlign.center,

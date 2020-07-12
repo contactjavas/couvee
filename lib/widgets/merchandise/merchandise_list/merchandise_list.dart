@@ -46,8 +46,8 @@ class MerchandiseList extends StatelessWidget {
                   controller: scrollController,
                   crossAxisCount: 2,
                   crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 28.0,
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  mainAxisSpacing: 20.0,
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
                   children: <Widget>[
                     MerchandiseItem(
                       text: "Kaliurang",
