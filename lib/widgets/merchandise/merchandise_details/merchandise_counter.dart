@@ -7,13 +7,20 @@ enum Actions {
 }
 
 typedef void CounterCallback(int pts);
+typedef void RedeemButton(bool isShown);
 
 class MerchandiseCounter extends StatefulWidget {
   final int pts;
   final int inStock;
   final CounterCallback callback;
-  const MerchandiseCounter({Key key, this.inStock, this.callback, this.pts})
-      : super(key: key);
+  final RedeemButton showRedeemButton;
+  const MerchandiseCounter({
+    Key key,
+    this.inStock,
+    this.callback,
+    this.pts,
+    this.showRedeemButton,
+  }) : super(key: key);
 
   @override
   _MerchandiseCounterState createState() => _MerchandiseCounterState();
@@ -29,6 +36,8 @@ class _MerchandiseCounterState extends State<MerchandiseCounter> {
           counter = counter + 1;
         });
         widget.callback(widget.pts * counter);
+
+        if (counter == 1) widget.showRedeemButton(false);
       }
     } else if (actions == Actions.minus) {
       if (counter > 0) {
@@ -36,6 +45,7 @@ class _MerchandiseCounterState extends State<MerchandiseCounter> {
           counter = counter - 1;
         });
         widget.callback(widget.pts * counter);
+        if (counter == 0) widget.showRedeemButton(true);
       }
     }
   }

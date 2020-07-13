@@ -19,11 +19,11 @@ class MerchandiseDetailsItem extends StatefulWidget {
 }
 
 class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
-  bool selected = false;
+  bool showButton = true;
 
-  void handleSelect() {
+  void showRedeemButton(bool isShown) {
     setState(() {
-      selected = !selected;
+      showButton = isShown;
     });
   }
 
@@ -107,10 +107,11 @@ class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
           Spacer(
             flex: 3,
           ),
-          selected
+          !showButton
               ? MerchandiseCounter(
                   pts: widget.pts,
                   inStock: widget.inStock,
+                  showRedeemButton: showRedeemButton,
                   callback: widget.handlePts,
                 )
               : SizedBox(
@@ -119,7 +120,8 @@ class _MerchandiseDetailsItemState extends State<MerchandiseDetailsItem> {
                   child: FlatButton(
                     color: CompanyColors.brown,
                     onPressed: () {
-                      handleSelect();
+                      showRedeemButton(false);
+                      widget.handlePts(widget.pts * 1);
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
