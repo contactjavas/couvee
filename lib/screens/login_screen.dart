@@ -119,7 +119,7 @@ class _LoginScreen extends State<LoginScreen> {
                   inputFormatters: <TextInputFormatter>[
                     WhitelistingTextInputFormatter.digitsOnly,
                   ],
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.phone,
                   validator: Validators.required("Masukkan nomor telepon"),
                   decoration: const InputDecoration(
                     helperText: ' ',
