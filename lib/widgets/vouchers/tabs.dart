@@ -49,8 +49,8 @@ class VoucherTabs extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          tab(activeIndex == 0, "Vocerku", 0, callback),
-          tab(activeIndex == 1, "Beli Vocer", 1, callback),
+          tab(activeIndex == 0, "Voucherku", 0, callback),
+          tab(activeIndex == 1, "Beli Voucher", 1, callback),
         ],
       ),
     );

@@ -1,6 +1,12 @@
+// Core packages.
 import 'package:flutter/material.dart';
 
+// Extension packages.
+import 'package:hive/hive.dart';
+
+// Couvee packages.
 import '../company_colors.dart';
+import 'package:couvee/responses/auth_response.dart';
 
 class EditAccountScreen extends StatefulWidget {
   EditAccountScreen({Key key}) : super(key: key);
@@ -14,14 +20,45 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
 
   double horizontalPadding;
 
-  final _nameController = TextEditingController();
+  final userBox = Hive.box("user");
+  UserData user;
+
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
 
   @override
+  void initState() {
+    user = UserData(
+      token: userBox.get("token"),
+      id: userBox.get("id"),
+      firstName: userBox.get("firstName"),
+      lastName: userBox.get("lastName"),
+      displayName: userBox.get("displayName"),
+      birthday: userBox.get("birthday"),
+      phone: userBox.get("phone"),
+      pin: userBox.get("pin"),
+    );
+    _firstNameController.value = TextEditingValue(
+      text: user.firstName,
+    );
+    _lastNameController.value = TextEditingValue(
+      text: (user.lastName != null ? user.lastName : ''),
+    );
+    _emailController.value = TextEditingValue(
+      text: (user.email != null ? user.email : user.phone + "@couvee.co.id"),
+    );
+    _phoneController.value = TextEditingValue(
+      text: user.phone,
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     topPadding = MediaQuery.of(context).size.height * 0.04;
-    horizontalPadding = MediaQuery.of(context).size.width * 0.02;
+    horizontalPadding = 20.0;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -38,53 +75,34 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      fillColor: Colors.transparent,
-                      labelText: 'Nama Lendkap',
-                    ),
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: AccountTextField(
+                    controller: _firstNameController,
+                    placeholder: "Nama Depan",
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: TextFormField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      fillColor: Colors.transparent,
-                      labelText: 'Email',
-                    ),
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: AccountTextField(
+                    controller: _lastNameController,
+                    placeholder: "Nama Belakang",
                   ),
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 2,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(labelText: "+62"),
-                        ),
-                      ),
-                    ),
-                    Flexible(
-                      flex: 8,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: TextFormField(
-                          controller: _phoneController,
-                          keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
-                            fillColor: Colors.transparent,
-                            labelText: 'Nomor Telepon',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: AccountTextField(
+                    controller: _emailController,
+                    placeholder: "Email",
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: AccountTextField(
+                    controller: _phoneController,
+                    placeholder: "Nomor Telepon",
+                    keyboardType: TextInputType.phone,
+                  ),
                 ),
               ],
             ),
@@ -104,6 +122,40 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class AccountTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final String placeholder;
+  final TextInputType keyboardType;
+
+  const AccountTextField(
+      {Key key, this.controller, this.placeholder, this.keyboardType})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      keyboardType:
+          (this.keyboardType != null ? this.keyboardType : TextInputType.text),
+      controller: controller,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 0),
+        fillColor: Colors.transparent,
+        labelText: placeholder,
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: CompanyColors.lightGrey.withOpacity(0.1),
+          ),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: CompanyColors.brown.withOpacity(0.5),
+          ),
         ),
       ),
     );

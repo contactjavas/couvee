@@ -30,7 +30,9 @@ class _VouchersListState extends State<VouchersList> {
   Widget voucherItem(title, date, image) {
     return Container(
       margin: EdgeInsets.only(bottom: 20.0),
-      height: screenHeight * 0.26,
+      padding: EdgeInsets.only(
+        bottom: 10.0,
+      ),
       decoration: BoxDecoration(
         color: CompanyColors.brown[50],
         borderRadius: BorderRadius.circular(15.0),
@@ -43,7 +45,11 @@ class _VouchersListState extends State<VouchersList> {
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 14.0, left: 20.0, right: 10.0),
+            padding: const EdgeInsets.only(
+              top: 14.0,
+              left: 20.0,
+              right: 10.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -90,7 +96,7 @@ class _VouchersListState extends State<VouchersList> {
                           );
                         },
                         child: Text(
-                          "Pakai Vocer",
+                          "Pakai Voucher",
                           style: TextStyle(
                             fontSize: 12.0,
                             color: Colors.white,

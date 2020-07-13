@@ -7,13 +7,16 @@ class ConfirmVoucherModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.5,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(35.0),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(35.0),
+          topRight: Radius.circular(35.0),
+        ),
       ),
       padding: EdgeInsets.only(
-        top: 16.0,
+        top: 30.0,
+        bottom: 30.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -48,6 +51,9 @@ class ConfirmVoucherModal extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
             ],
           ),
           Row(
@@ -60,7 +66,7 @@ class ConfirmVoucherModal extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   child: Text(
-                    "Pakai Vocer",
+                    "Batal",
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,
@@ -77,7 +83,7 @@ class ConfirmVoucherModal extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   child: Text(
-                    "Pakai Vocer",
+                    "Pakai Voucher",
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,

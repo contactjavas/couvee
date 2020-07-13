@@ -35,7 +35,9 @@ class _ReferralScreenState extends State<ReferralScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 30.0),
+      padding: EdgeInsets.only(
+        top: 30.0,
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,8 +106,8 @@ class _ReferralScreenState extends State<ReferralScreen> {
           ),
           Container(
             padding: EdgeInsets.only(
-              left: 30,
-              right: 30,
+              left: 25,
+              right: 25,
               top: 16,
               bottom: 16,
             ),
@@ -123,16 +125,19 @@ class _ReferralScreenState extends State<ReferralScreen> {
               ],
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
-                  height: double.infinity,
+                  height: 40.0,
                   decoration: BoxDecoration(
                     color: CompanyColors.brown[50],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   margin: EdgeInsets.symmetric(vertical: 16.0),
-                  width: MediaQuery.of(context).size.width * 0.52,
                   child: DottedBorder(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                    ),
                     radius: Radius.circular(10.0),
                     color: CompanyColors.brown[200],
                     borderType: BorderType.RRect,
@@ -146,17 +151,19 @@ class _ReferralScreenState extends State<ReferralScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 8.0),
-                FlatButton(
-                  onPressed: () {},
-                  color: CompanyColors.brown,
-                  child: Text(
-                    "Salin Kodemu",
-                    style: TextStyle(
-                      color: Colors.white,
+                SizedBox(
+                  height: 40.0,
+                  child: FlatButton(
+                    onPressed: () {},
+                    color: CompanyColors.brown,
+                    child: Text(
+                      "Salin Kodemu",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

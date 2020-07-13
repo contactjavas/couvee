@@ -205,7 +205,7 @@ class _VoucherDetailsState extends State<VoucherDetails> {
                               );
                             },
                             child: Text(
-                              "Pakai Vocer",
+                              "Pakai Voucher",
                               style: TextStyle(
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w500,
