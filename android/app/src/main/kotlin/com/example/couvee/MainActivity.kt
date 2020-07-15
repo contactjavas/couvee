@@ -1,4 +1,4 @@
-package com.example.couvee
+package id.co.couvee.customer
 
 import io.flutter.embedding.android.FlutterActivity
 
