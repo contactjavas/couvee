@@ -19,22 +19,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^3.2.0
-  path_provider: ^1.5.1
+  provider: ^4.3.1
+  path_provider: ^1.6.11
   hive: ^1.4.2
   hive_flutter: ^0.3.1
-  http: ^0.12.0+4
-  flutter_svg: ^0.15.0
-  google_fonts: ^0.2.0
+  http: ^0.12.2
+  flutter_svg: ^0.18.0
+  google_fonts: ^1.1.0
   wc_form_validators: ^0.1.1
   datetime_picker_formfield: ^1.0.0
   intl: ^0.16.1
-  passcode_screen: ^1.0.2
-  flutter_rounded_progress_bar: 0.1.1
+  passcode_screen: ^1.2.0
+  flutter_rounded_progress_bar: ^0.1.2
   qr_code_scanner: ^0.0.13
   font_awesome_flutter: ^8.8.1
-  eva_icons_flutter: ^2.0.0
-  dotted_border: ^1.0.5
+  eva_icons_flutter: ^2.0.1
+  dotted_border: ^1.0.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
