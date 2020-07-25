@@ -1,5 +1,4 @@
 // Core packages.
-import 'package:couvee/screens/screens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Couvee packages.
+import 'package:couvee/screens/screens.dart';
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/screen_selector.dart';
 
