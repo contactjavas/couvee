@@ -96,7 +96,7 @@ class _LoginScreen extends State<LoginScreen> {
         ),
         child: Form(
           key: _formKey,
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             children: <Widget>[
               Container(
@@ -117,7 +117,7 @@ class _LoginScreen extends State<LoginScreen> {
                 child: TextFormField(
                   controller: phoneFieldController,
                   inputFormatters: <TextInputFormatter>[
-                    WhitelistingTextInputFormatter.digitsOnly,
+                    FilteringTextInputFormatter.digitsOnly,
                   ],
                   keyboardType: TextInputType.phone,
                   validator: Validators.required("Masukkan nomor telepon"),

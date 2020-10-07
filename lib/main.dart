@@ -1,28 +1,23 @@
 // Core packages.
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // Extension packages.
-import 'package:path_provider/path_provider.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Couvee packages.
+import 'package:couvee/hive-adapters/user.dart';
 import 'package:couvee/screens/screens.dart';
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/screen_selector.dart';
 
 void main() async {
-  if (!kIsWeb) {
-    WidgetsFlutterBinding.ensureInitialized();
-
-    var dir = await getApplicationDocumentsDirectory();
-
-    Hive.init(dir.path);
-  }
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
 
   runApp(CouveeApp());
   Hive.close();

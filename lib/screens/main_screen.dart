@@ -35,37 +35,25 @@ class _MainScreenState extends State<MainScreen> {
       icon: ImageIcon(
         AssetImage("assets/images/tab-icons/home-icon.png"),
       ),
-      title: Container(
-        margin: EdgeInsets.only(top: 8.7),
-        child: Text('Home'),
-      ),
+      label: 'Home',
     ),
     BottomNavigationBarItem(
       icon: ImageIcon(
         AssetImage("assets/images/tab-icons/tshirt-icon.png"),
       ),
-      title: Container(
-        margin: EdgeInsets.only(top: 8.7),
-        child: Text('Merchandise'),
-      ),
+      label: 'Merchandise',
     ),
     BottomNavigationBarItem(
       icon: ImageIcon(
         AssetImage("assets/images/tab-icons/voucher-icon.png"),
       ),
-      title: Container(
-        margin: EdgeInsets.only(top: 8.7),
-        child: Text('Voucher'),
-      ),
+      label: 'Voucher',
     ),
     BottomNavigationBarItem(
       icon: ImageIcon(
         AssetImage("assets/images/tab-icons/menu-icon.png"),
       ),
-      title: Container(
-        margin: EdgeInsets.only(top: 8.7),
-        child: Text('Menu'),
-      ),
+      label: 'Menu',
     ),
   ];
 

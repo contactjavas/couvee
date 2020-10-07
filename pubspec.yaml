@@ -21,10 +21,10 @@ dependencies:
     sdk: flutter
   provider: ^4.3.1
   path_provider: ^1.6.11
-  hive: ^1.4.2
+  hive: ^1.4.4
   hive_flutter: ^0.3.1
   http: ^0.12.2
-  flutter_svg: ^0.18.0
+  flutter_svg: ^0.19.0
   google_fonts: ^1.1.0
   wc_form_validators: ^0.1.1
   datetime_picker_formfield: ^1.0.0
@@ -32,7 +32,7 @@ dependencies:
   passcode_screen: ^1.2.0
   flutter_rounded_progress_bar: ^0.1.2
   qr_code_scanner: ^0.0.13
-  font_awesome_flutter: ^8.8.1
+  font_awesome_flutter: ^8.9.0
   eva_icons_flutter: ^2.0.1
   dotted_border: ^1.0.6
 
@@ -43,9 +43,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  hive_generator: ^0.7.1
-  build_runner: ^1.10.0
-  flutter_launcher_icons: "^0.7.5"
+  hive_generator: ^0.8.1
+  build_runner: ^1.10.3
+  flutter_launcher_icons: "^0.8.1"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

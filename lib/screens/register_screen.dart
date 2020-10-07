@@ -108,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
         child: Form(
           key: _formKey,
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             children: <Widget>[
               Container(
@@ -129,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: TextFormField(
                   controller: phoneFieldController,
                   inputFormatters: <TextInputFormatter>[
-                    WhitelistingTextInputFormatter.digitsOnly,
+                    FilteringTextInputFormatter.digitsOnly,
                   ],
                   keyboardType: TextInputType.phone,
                   validator: Validators.required("Masukkan nomor telepon"),
@@ -160,7 +160,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: TextFormField(
                   controller: pinFieldController,
                   inputFormatters: <TextInputFormatter>[
-                    WhitelistingTextInputFormatter.digitsOnly,
+                    FilteringTextInputFormatter.digitsOnly,
                   ],
                   keyboardType: TextInputType.number,
                   validator: Validators.compose(

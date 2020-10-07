@@ -243,7 +243,7 @@ packages:
       name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.5"
+    version: "0.8.1"
   flutter_rounded_progress_bar:
     dependency: "direct main"
     description:
@@ -257,7 +257,7 @@ packages:
       name: flutter_svg
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.1"
+    version: "0.19.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -311,7 +311,7 @@ packages:
       name: hive_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.3"
+    version: "0.8.1"
   http:
     dependency: "direct main"
     description:

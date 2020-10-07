@@ -131,7 +131,7 @@ class _ProfileFormState extends State<ProfileForm> {
             ),
             child: Form(
               key: _formKey,
-              autovalidate: true,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: ListView(
                 children: <Widget>[
                   Container(

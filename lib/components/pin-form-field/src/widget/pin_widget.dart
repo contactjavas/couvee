@@ -74,7 +74,7 @@ class PinCodeField extends StatefulWidget {
                     pinLength - 1)),
         inputFormatters = inputFormatter == null
             ? <TextInputFormatter>[
-                WhitelistingTextInputFormatter.digitsOnly,
+                FilteringTextInputFormatter.digitsOnly,
                 LengthLimitingTextInputFormatter(pinLength),
               ]
             : inputFormatter
@@ -282,7 +282,8 @@ class _PinPaint extends CustomPainter {
           errorTextStyle: decoration.errorTextStyle ??
               themeData.textTheme.caption.copyWith(color: themeData.errorColor),
           hintTextStyle: decoration.hintTextStyle ??
-              themeData.textTheme.headline5.copyWith(color: themeData.hintColor),
+              themeData.textTheme.headline5
+                  .copyWith(color: themeData.hintColor),
         );
 
   @override
@@ -342,7 +343,7 @@ class PinCodeFormField extends FormField<String> {
                     pinLength - 1)),
         inputFormatters = inputFormatter == null
             ? <TextInputFormatter>[
-                WhitelistingTextInputFormatter.digitsOnly,
+                FilteringTextInputFormatter.digitsOnly,
                 LengthLimitingTextInputFormatter(pinLength),
               ]
             : inputFormatter
@@ -368,7 +369,9 @@ class PinCodeFormField extends FormField<String> {
               }
               return result;
             },
-            autovalidate: autovalidate,
+            autovalidateMode: (autovalidate
+                ? AutovalidateMode.onUserInteraction
+                : AutovalidateMode.disabled),
             enabled: enabled,
             builder: (FormFieldState<String> field) {
               final _PinCodeFormFieldState state = field;

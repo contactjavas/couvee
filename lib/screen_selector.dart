@@ -44,8 +44,8 @@ class ScreenSelector extends StatelessWidget {
         final settingBox = Hive.box('setting');
 
         if (userBox.get('id') != null) {
-          // return LockScreen();
-          return MainScreen();
+          return LockScreen();
+          // return MainScreen();
         }
 
         return settingBox.get('hideOnboarding') != null
