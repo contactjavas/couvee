@@ -10,7 +10,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Couvee packages.
-import 'package:couvee/hive-adapters/user.dart';
+import 'package:couvee/hive/user.dart';
 import 'package:couvee/screens/screens.dart';
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/screen_selector.dart';
