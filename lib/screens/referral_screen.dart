@@ -1,6 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../company_colors.dart';
 
@@ -80,7 +80,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
                       return ListTile(
                         dense: false,
                         leading: Icon(
-                          EvaIcons.questionMarkCircleOutline,
+                          FontAwesomeIcons.questionCircle,
                           color: CompanyColors.brown,
                         ),
                         title: Text(

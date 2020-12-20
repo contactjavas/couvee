@@ -1,6 +1,6 @@
 import 'package:couvee/company_colors.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PointsKeyboardHeader extends StatelessWidget {
   final TextEditingController controller;
@@ -34,7 +34,7 @@ class PointsKeyboardHeader extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 icon: Icon(
-                  EvaIcons.closeCircle,
+                  FontAwesomeIcons.solidTimesCircle,
                   color: Colors.grey,
                   size: 32,
                 ),
@@ -74,7 +74,7 @@ class PointsKeyboardHeader extends StatelessWidget {
                       controller.text = '';
                     },
                     icon: Icon(
-                      EvaIcons.closeCircle,
+                      FontAwesomeIcons.solidTimesCircle,
                       color: CompanyColors.lightGrey,
                     ),
                   ),

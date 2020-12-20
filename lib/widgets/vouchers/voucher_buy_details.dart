@@ -1,8 +1,8 @@
 import 'package:couvee/widgets/widgets.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'package:couvee/company_colors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class _Item {
   final String headerValue;
@@ -37,21 +37,21 @@ class _VoucherBuyDetailsState extends State<VoucherBuyDetails> {
   List<_Item> _items = <_Item>[
     new _Item(
       isExpanded: true,
-      icon: EvaIcons.info,
+      icon: Icons.info,
       headerValue: 'Voucher Description',
       expandedValue:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In integer quam mattis lectus lacus. Mauris elementum tempor nunc, in porttitor. Eu eget fermentum laoreet ac elementum nullam. ',
     ),
     new _Item(
       isExpanded: false,
-      icon: EvaIcons.fileText,
+      icon: FontAwesomeIcons.fileAlt,
       headerValue: 'Terms and conditions',
       expandedValue:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In integer quam mattis lectus lacus. Mauris elementum tempor nunc, in porttitor. Eu eget fermentum laoreet ac elementum nullam. ',
     ),
     new _Item(
       isExpanded: false,
-      icon: EvaIcons.questionMarkCircle,
+      icon: FontAwesomeIcons.solidQuestionCircle,
       headerValue: 'How to use',
       expandedValue:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In integer quam mattis lectus lacus. Mauris elementum tempor nunc, in porttitor. Eu eget fermentum laoreet ac elementum nullam. ',
@@ -114,7 +114,7 @@ class _VoucherBuyDetailsState extends State<VoucherBuyDetails> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
-                            EvaIcons.calendar,
+                            FontAwesomeIcons.solidCalendar,
                             color: CompanyColors.brown,
                             size: 15.0,
                           ),

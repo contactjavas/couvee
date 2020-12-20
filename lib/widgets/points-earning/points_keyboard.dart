@@ -1,7 +1,7 @@
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/widgets/widgets.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PointsKeyboard extends StatefulWidget {
   @override
@@ -111,7 +111,7 @@ class _PointsKeyboardState extends State<PointsKeyboard> {
                                     alignment: Alignment.center,
                                     child: Center(
                                       child: Icon(
-                                        EvaIcons.backspace,
+                                        FontAwesomeIcons.backspace,
                                       ),
                                     ),
                                   ),

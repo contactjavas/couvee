@@ -1,8 +1,8 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'package:couvee/company_colors.dart';
 import 'package:couvee/screens/screens.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum VoucherStatus { buy, bought }
 
@@ -66,7 +66,7 @@ class _VouchersListState extends State<VouchersList> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Icon(
-                          EvaIcons.calendar,
+                          FontAwesomeIcons.solidCalendar,
                           color: CompanyColors.brown,
                           size: 15.0,
                         ),
