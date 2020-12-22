@@ -5,15 +5,21 @@ class BasicResponse {
   final String message;
   dynamic data;
 
-  BasicResponse({this.success, this.statusCode, this.code, this.message, this.data});
+  BasicResponse({
+    this.success,
+    this.statusCode,
+    this.code,
+    this.message,
+    this.data,
+  });
 
   factory BasicResponse.fromJson(Map<String, dynamic> json) {
     return BasicResponse(
-      success: json['success'],
+      success: json['success'] != null ? json['success'] : false,
       statusCode: json['statusCode'],
       code: json['code'],
-      message: json['message'],
-      data: json['data'],
+      message: json['message'] != null ? json['message'] : '',
+      data: json['data'] != null ? json['data'] : [],
     );
   }
 }

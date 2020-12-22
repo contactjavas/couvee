@@ -5,7 +5,13 @@ class AuthResponse {
   final String message;
   final UserData data;
 
-  AuthResponse({this.success, this.statusCode, this.code, this.message, this.data});
+  AuthResponse({
+    this.success,
+    this.statusCode,
+    this.code,
+    this.message,
+    this.data,
+  });
 
   factory AuthResponse.fromJson(Map<String, dynamic> json) {
     bool hasData = json['data'].isNotEmpty ? true : false;

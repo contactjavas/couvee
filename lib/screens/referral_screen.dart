@@ -68,6 +68,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
                 ),
               ),
               ExpansionPanelList(
+                elevation: 0,
                 expansionCallback: (int index, bool isExpanded) {
                   setState(() {
                     _items[index].isExpanded = !_items[index].isExpanded;

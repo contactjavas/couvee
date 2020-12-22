@@ -1,32 +1,40 @@
 // Core packages.
 import 'dart:convert';
+import 'dart:io';
 
 // Extension packages.
 import 'package:http/http.dart' as http;
 
 // Couvee packages.
+import 'package:couvee/services/app_service.dart';
 import 'package:couvee/responses/basic_response.dart';
 import 'package:couvee/responses/auth_response.dart';
 
 class AuthService {
-  static const apiUrl = 'https://points.couvee.co.id/wp-json/jwt-auth/v1';
-  static const openApiUrl = 'https://points.couvee.co.id/wp-json/couvee/v1';
+  static const jwtApiUrl = AppService.jwtApiUrl;
+  static const apiUrl = AppService.couveeApiUrl;
 
   Future<BasicResponse> checkAccountAvailability(username) async {
-    final response = await http.get(
-      openApiUrl + '/account/check/availability/?username=$username',
-    );
+    try {
+      final response = await http.get(
+        apiUrl + '/account/check/availability/?username=$username',
+      );
 
-    if (response.statusCode != 200) {
-      print(response.body);
+      if (response.statusCode == 200 ||
+          response.statusCode == 401 ||
+          response.statusCode == 403) {
+        return BasicResponse.fromJson(json.decode(response.body));
+      } else {
+        return BasicResponse(success: false, message: "Something went wrong!");
+      }
+    } on SocketException {
+      return BasicResponse(success: false, message: "No internet connection");
     }
-
-    return BasicResponse.fromJson(json.decode(response.body));
   }
 
   Future<BasicResponse> sendOtp(phone, action, subAction) async {
     final response = await http.post(
-      openApiUrl + '/otp/send/',
+      apiUrl + '/otp/send/',
       body: {'phone': phone, 'action': action, 'sub_action': subAction},
     );
 
@@ -39,7 +47,7 @@ class AuthService {
 
   Future<AuthResponse> register(data) async {
     final response = await http.post(
-      openApiUrl + '/register/',
+      apiUrl + '/register/',
       body: {
         'otp': data.otp,
         'phone': data.phone,
@@ -59,7 +67,7 @@ class AuthService {
 
   Future<AuthResponse> login(phone, otp) async {
     final response = await http.post(
-      apiUrl + '/token',
+      jwtApiUrl + '/token',
       body: {
         'username': phone,
         'password': otp,

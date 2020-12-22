@@ -169,6 +169,7 @@ class _VoucherBuyDetailsState extends State<VoucherBuyDetails> {
                         ),
                       ),
                       ExpansionPanelList(
+                        elevation: 0,
                         expandedHeaderPadding: EdgeInsets.only(bottom: 14.0),
                         expansionCallback: (int index, bool isExpanded) {
                           setState(() {
