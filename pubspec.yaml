@@ -14,36 +14,36 @@ description: Couvee points app.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^3.2.0
-  path_provider: ^1.5.1
-  hive: ^1.1.1
-  hive_flutter: ^0.2.1
-  http: ^0.12.0+4
-  flutter_svg: ^0.15.0
-  google_fonts: ^0.2.0
-  flutter_launcher_icons: ^0.7.4
-  wc_form_validators: ^0.1.1
-  datetime_picker_formfield: ^1.0.0
-  intl: ^0.16.1
-  passcode_screen: ^1.0.2
-  flutter_rounded_progress_bar: 0.1.1
-  qr_code_scanner: ^0.0.13
-  font_awesome_flutter: ^8.8.1
+  riverpod: ^2.3.10
+  path_provider: ^2.1.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  http: ^1.1.0
+  flutter_svg: ^2.0.7
+  google_fonts: ^5.1.0
+  flutter_launcher_icons: ^0.13.1
+  wc_form_validators: ^1.0.0
+  datetime_picker_formfield: ^2.0.1
+  intl: ^0.18.1
+  passcode_screen: ^2.0.1
+  flutter_rounded_progress_bar: 0.2.0
+  qr_code_scanner: ^1.0.1
+  font_awesome_flutter: ^10.5.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  hive_generator: ^0.5.2
-  build_runner: ^1.7.2
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
